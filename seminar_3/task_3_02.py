@@ -10,9 +10,8 @@ email: jackie@gmail.com, телефон: 01005321456
 """
 
 
-def user(*args):
-    user_data = f'{name} {surname} {year_birth} года рождения, проживает в городе {city}' \
-                f' email: {e_mail}, телефон: {telephone}'
+def get_user_data(**qwargs):
+    user_data = f'{name} {surname} {year_birth} года рождения, проживает в городе {city}, email: {e_mail}, телефон: {telephone}'
     return user_data
 
 
@@ -23,4 +22,5 @@ city = input('Введите город проживания пользоват�
 e_mail = input('Введите e-mail пользователя: ')
 telephone = int(input('Введите телефон пользователя: '))
 
-print(user(name, surname, year_birth, city, e_mail, telephone))
+print(get_user_data(name=name, surname=surname, year_birth=year_birth, city=city, e_mail=e_mail,
+                    telephone=telephone))

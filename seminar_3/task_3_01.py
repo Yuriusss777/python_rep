@@ -20,12 +20,11 @@ Process finished with exit code 0
 
 
 def my_func(num_1, num_2):
-    if num_2 == 0:
-        try:
-           res = num_1 / 0
-        except ZeroDivisionError:
-            return print('Вы что? Пытаетесь делить на 0!')
-    res = num_1 / num_2
+    try:
+        res = num_1 / num_2
+    except ZeroDivisionError:
+        return 'Вы что? Пытаетесь делить на 0!'
+
     return res
 
 

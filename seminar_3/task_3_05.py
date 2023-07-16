@@ -7,25 +7,24 @@
     ранее сумме и после этого завершить программу.
 """
 
-res_sum = 0
 
-
-def my_func(*args):
-    a = input('Введите строку чисел: ')
-    b = a.split()
-    global res_sum
-    for i in range(len(b)):
-        if b[i] == 'n':
+def my_func(lst):
+    res_sum = 0
+    for el in lst:
+        if el == 'n':
             break
-        res_sum += (int(b[i]))
+        res_sum += int(el)
     return res_sum
 
 
-print(my_func())
+a = input('Введите строку чисел: ').split()
+
+res = my_func(a)
+print(res)
 
 for _ in range(100):
     c = int(input('введите 1 для продолжения: '))
     if c == 1:
-        print(my_func())
+        print(my_func(a))
     else:
         break

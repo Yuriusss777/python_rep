@@ -9,16 +9,19 @@
 
 def my_func(x, y):
     """функция определения числа x в степень y"""
-    try:
-        if x > 0 > y:
-            res = 1 / x
-            for i in range(y, -1):
-                res *= 1 / x
-            return res
-        else:
-            return ('Число y должно быть строго отрицательным')
-    except TypeError:
-        return "Пожалуйста, вводите только числа"
+    res = 1 / x
+    for i in range(y, -1):
+        res *= 1 / x
+    return res
 
 
-print(my_func(2, -2))
+x = int(input('Введите действительное положительное число x: '))
+y = int(input('Введите целое отрицательное число y: '))
+
+try:
+    if x > 0 > y:
+        print(my_func(x, y))
+    else:
+        print('Число y должно быть строго отрицательным или число x должно быть действительным положительным')
+except TypeError:
+    print("Пожалуйста, вводите только числа")
